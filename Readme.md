@@ -23,7 +23,7 @@
 
 ****
 
- ![[Pasted image 20250211221032.png]]
+![[Pasted image 20250211221032.png]]
 Bu araba sınıfından istediğimiz araba nesnesini üretebiliriz;
 
 ![[Pasted image 20250211221114.png]]
@@ -39,18 +39,18 @@ Bu araba sınıfından istediğimiz araba nesnesini üretebiliriz;
 Nesne modelinden farklı nesneler üretilmiş.
 
 *** 
-#### Nesneler Hangi Türdendir? 
+#### Nesneler Hangi Türdendir?
 
 - Nesneler referans türlü değerlerdir.
 *** 
-#### Referans türü nedir? 
+#### Referans türü nedir?
 -  Referans türlü değişkenler, Heap’te saklanan nesnelere işaret eden Stack üzerindeki referanslardır.
 - Kopyalandığında **sadece referans kopyalanır**, yeni bir nesne oluşturulmaz.
 - Stack’te sadece **adres saklanır**, asıl veri Heap’te bulunur.
 - Referans türlü değişken, **Heap bellekte saklanan** ve **Stack üzerinde adresi (referansı) tutulan değişkenlerdir**.
 - Yani, **değişkenin kendisi Stack’te durur ama asıl veri Heap’te bulunur** ve Stack’te sadece Heap’teki veriye erişmek için bir **referans (adres)** tutulur.
 *** 
-#### Class Nedir? Neden Kullanılır? 
+#### Class Nedir? Neden Kullanılır?
 *** 
 ##### Öncelikle Model içerisinde neler tutabildiğimizi hatırlayalım;
 - Field
@@ -62,7 +62,7 @@ Nesne modelinden farklı nesneler üretilmiş.
 *** 
 #### Sınıf ile Nesne arasındaki ilişki
 
-- Classlarda nesnelerdeki ortak alan tanımları yapılır. 
+- Classlarda nesnelerdeki ortak alan tanımları yapılır.
 - Her bir objenin Ad fieldi var ama hepsinde objelerin değerleri farklı olur
 #### Sınıf nerede ve nasıl oluşturulur?
 ```c#
@@ -74,13 +74,13 @@ class Ornekmodel
 - Class [isim] şeklinde oluşturulur ve {} arasına yazılır kodlar.
 - Classlar bir referans türüdür.
 ***
-##### Namespace nedir? 
+##### Namespace nedir?
 - İçerisinde birden fazla class struct interface gibi yapılanmaları barındıran kütüphane mantığını oluşturmanı sağlayan, genel anlamda kurmuş olduğun sistemde sınıflarını farklı namespaceler altında kategorize edip o kategorilerden çağırmanı sağlayan yapılanma.
 ***
 - Eğerki classı namespacenin üstünde açarsan bağımsız class olur herkes erişebilir.
-- Bir class tanımlamasında tanımlanan yerde (namespace/class olabilir) aynı isimde birden fazla class tanımlanamaz! 
+- Bir class tanımlamasında tanımlanan yerde (namespace/class olabilir) aynı isimde birden fazla class tanımlanamaz!
 ***
-##### Sınıf ile nesne modeli nasıl oluşturulur? 
+##### Sınıf ile nesne modeli nasıl oluşturulur?
 - Önce bir sınıf oluştururuz.
 - 2 tane özellik olabilir içerisinde.
 - Classın içerisinde bildiğin şey varsa örnek int a,b bunlar field olur.
@@ -128,7 +128,7 @@ class MyClass
 ```
 - Class içerisinde a türünde bir  değişken bellekte tanımlanırken a nın değeri boş değer değil 0 a atanacaktır. Sayısal türlerin varsayılan değeri 0 dır.
 *** 
-##### Property Nedir? 
+##### Property Nedir?
 -  Nesne içerisinde özellik-property sağlar.
 - Property esasında özünde bir metottur. Yeni programatik-algoritmik kodlarımızı inşa ettiğimiz bir metot.
 *** 
@@ -160,17 +160,17 @@ class MyClass
 ###### Metodun adı
 - Metodun adını verir.
 *** 
-###### () 
+###### ()
 - Metod dediğimiz bu yapılanmalar dış dünyadan parametreler alabilmekte ve bu parametrelerdeki değerler üzerinde işlemler gerçekleştirebilmektedir... İşte bu parametreleri parantez içerisinden alabilmekteyiz.
 - Almak zorunda değildir.
 - (int sayi1) (int sayi1, int sayi2)
 ***
-{} 
+{}
 - Metodun gerçekleştireceği operasyonu faaliyeti algoritmayı oluşturduğumuz alandır
 *** 
 () varsa o metoddur net olarak.
 
-##### İşlevine Göre Metod Türleri Nelerdir? 
+##### İşlevine Göre Metod Türleri Nelerdir?
 
 - 4 Farklı türde oluşturabilirsiniz.
 ***
@@ -217,5 +217,34 @@ public void Metot3(int a,string b,char c)
 - Hepsinde metod adı vardır.
 - Bir metod geriye değer döndürmüyorsa, void ile belirtilmesi zorunludur. Başka bir tür olursa onu geriye döndürür.
 *** 
-- 
+##### Metodun geriye değer döndürmesi ne demektir?
 
+- Metodun geriye değer döndürmesi demek, metodun yaptığı işlem neticesinde uüretilen değeri ekrana consola veritabanına herhangi bir log ekranına çıktı vermesi demek değildir!!!
+- Metodun geriye döndürdüğü değer, programatik olarak yakalanıp algoritmanın akışında farklı yönlendirmelere sebebiyet verebilen değerdir!!!
+- Metodun geriye döndürdüğü değer algoritmanın akışında kullanılabilir değerdir!!!
+***
+##### Metotlarda Opsiyonel Parametreler
+- Parametreli bir metot kullanırken çağırırken tetiklerken parametrelerine türlerine uygun değerler gönderilmek zorunludur, eğerki bir metodun parametrelerine zorunlu bir şekilde değer göndermek istemiyorsak, parametreye değeri isteğimize göre opsiyonel olarak göndermek istiyorsak o parametrenin bu durumu karşılayacak bir özellikle olması gerekmektedir. İşte bu özelliğede opsiyonel parametreler denmektedir.
+
+```c#
+class Program  
+{  
+    static void Main(string[] args)  
+    {        
+	    X(5,10);  
+    }  
+    static public void X(int a, int b)  
+    {            
+    
+    }  
+}
+```
+
+- Bir parametrenin opsiyonel olabilmesi demek o parametrenin varsayılan default değeri olması demektir.
+- Bu şekilde yaparsak zorunlu olarak a da b ye de değer verilmelidir. Opsiyonel yapmak için;
+
+```c#
+static public void X(int a, int b = 0)
+```
+
+- Metot parametrelerine = (assign) operatörü ile bir değer atanırsa eğer o parametreye varsayılan değeri atanmış olur. Bu şekilde opsiyonel parametre haline getirilmiş olur.
