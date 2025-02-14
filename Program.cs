@@ -1,30 +1,12 @@
 ﻿class Program
 {
-    private void Metot1()
+    static void Main(string[] args)
     {
-        Console.WriteLine("Metot1");
+        X(5,10);
     }
 
-    public void Metot2(int a)
+    static public void X(int a, int b = 0)
     {
-
-    }
-    public void Metot3(int a,string b,char c)
-    {
-
-    }
-    public string Metot4()
-    {
-        return "selam";
-    }
-
-    public int Metot5(int a)
-    {
-        return a;
-    }
-
-    public int Metot5(string b)
-    {
-        return 5;
+        
     }
 }

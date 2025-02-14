@@ -216,5 +216,6 @@ public void Metot3(int a,string b,char c)
 - Hepsinde geri dönüş türü vardır.
 - Hepsinde metod adı vardır.
 - Bir metod geriye değer döndürmüyorsa, void ile belirtilmesi zorunludur. Başka bir tür olursa onu geriye döndürür.
-
+*** 
+- 
 
