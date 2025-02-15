@@ -325,3 +325,30 @@ static void X(int a,int b,string c){
 - In komutu sayesinde parametreye verilen değeri sabit tutabilmekteyiz.
 - In komutu metodun parametresiin readonly(Sadece okunabilir) hale getirir.
 - In komutunun kullanıldığı parametrelerde eğerki metot içerisinde farklı bir assign durumu söz konusu olursa derleyici hatası verecektir.
+***
+##### Local Functions(Metot İçerisinde Tanımlanabilir Yerel Metotlar)
+- Bir metot içerisinde tanımlanmış olan metotlardır!
+- C# ta metotlar sade ve sadece class içerisinde tanımlanırlar, Halbuki oop de göreceğimiz struct, aabstract class, interface, record yapılanmalarında da metotlar tanımlanmaktaddır. Metotlar bu saydıklarımızın dışında kesinlikle başka bir yerde tanımlanamaz!!
+- Metotlar kesinlikle metotların içerisinde tanımlanamaz demiştik, c# 7 da gelen local function özelliği sayesinde metot içerisinde metot tanımlanabilmektedir.
+- Tanımlanmış metodun tanımlandığı sınıf dışından erişilip erişilmemesi durumunu belirleyen ifade erişim belirleyicisidir.
+- Local functionslarda erişim belirleyicileri yoktur, direkt geri dönüş değerinden başlanır.
+- Local function sadece tanımlandığı metodun içerisinde erişilebilir olacaktır.
+- Local function olarak tanımlanan fonksiyon adı tanımlandığı fonksiyonun adınadna farklı olmalıdır! Aksi taktirde derleyici hatası vermez!!
+- Local functionun tanımlandığı metod içerisinde her yerden erişilebilir(ister metodun üstünde ister altında).
+- Bir metot sadece tek bir metotta tekrarlı bir şekilde kullanılacak bir algoritmayı kod parçacığını işlemi o metoda özel bir şekilde tek seferlik tanımlamamızı ve kullanmamızı sağlamaktadır.
+- Anonim, Delegate, Func gibi ileri düzey programlamada bulunan muadilleri vardır.
+***
+##### Static Local Functions(Metot İçerisinde Tanımlanabilir Statik Yerel Metotlar)
+
+##### Metotlarda Overloading (Çoklu Yükleme)
+- Bir class içerisinde aynı isimde birden fazla metot tanımlanamaz!
+- Bir sınıfın içerisinde aynı isimde birden fazla metot tanımlanamaz, belirli kurallar içerisinde.
+- Bir classta aynı isimde birden fazla metot tanımlanmışsa eğer o isime overloading yapılmıştır.
+- Bir class içerisinde belirli kurallar çerevesinde aynı isimde birden fazla metot oluşturmaya Method overloading denir.
+***
+**Bir sınıf içerisinde birden fazla aynı isimde metot tanımlayabilmek için şu kurallara dikkat edilmesi gerekmektedir;**
+1. Bu fark bizzat metot imzalarında olmalıdır.
+2. Metot overloading işlemini yapabilmek için metotların isimleri aynı olmalıdır.
+3. Metotlar arasında farkı yaratırken erişim belirleyicileri ve geri dönüş değerleri aktif rol oynamaktadır.
+4. Parametrelerin sayıları yada türleri farklı olmak zorundadır.
+5. Overloading işlemine tabi tutulmuş metotlardan istediğimizi kullanabilmek için o metodun imzasına uygun parametreleri tetiklememiz yeterli olacaktır.
