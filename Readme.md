@@ -275,3 +275,53 @@ Random r = new Random();
 
 - Aynı türde bir değişkenle işaretlemen gerekiyor.
 ***
+**Örnek**
+```c#
+class Program  {  
+        static void Main(string[] args)  
+        {            
+	        Matematik mat = new Matematik();  
+            int sonuc = mat.Cikar(5, 2);  
+            Console.WriteLine(sonuc);  
+         }  
+    }  
+class Matematik  {  
+        public int Topla(int sayi1, int sayi2)  
+        {            
+	        return sayi1 + sayi2;  
+        }  
+        public int Cikar(int sayi1, int sayi2)  
+        {            
+	        return sayi1 - sayi2;  
+        }  
+        public int Carp(int sayi1, int sayi2)  
+        {            
+	        return sayi1 * sayi2;  
+        }  
+        public int Bol(int sayi1, int sayi2)  
+        {            
+	        return sayi1 / sayi2;  
+        }    
+    }
+```
+
+- Dışarıdan erişilebilmesi için **Public** işaretlenmesi önemlidir
+***
+##### Non Trailing Named Arguments
+- Hangi parametreye hangi değerlerin gönderildiğini direkt görebilmek için bu özelliği kullanırız.
+- Çok parametreli fonskiyonlarda hedef parametrelere değer göndermemizi sağlayan bir özelliktir.
+```c#
+X(a:2,b:3,c:"selam");
+X(b:3,c:"selam",a:10);
+
+static void X(int a,int b,string c){
+
+}
+```
+***
+##### Metotlarda In Parametreleri
+- Parametrenin değerini metodun içerisinde herhangi bir yerde çağırıp kullanabiliriz.
+- Metot içerisinde üretilen herhangi bir değeri tutacak değişken oluşturmaktansa parametre üzerinde bu değeri tutabiliriz. Yeni parametrenin değerini değiştirebiliriz. (Çünkü parametreler özünde bir değişkendir.)
+- In komutu sayesinde parametreye verilen değeri sabit tutabilmekteyiz.
+- In komutu metodun parametresiin readonly(Sadece okunabilir) hale getirir.
+- In komutunun kullanıldığı parametrelerde eğerki metot içerisinde farklı bir assign durumu söz konusu olursa derleyici hatası verecektir.
