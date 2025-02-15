@@ -248,3 +248,30 @@ static public void X(int a, int b = 0)
 ```
 
 - Metot parametrelerine = (assign) operatörü ile bir değer atanırsa eğer o parametreye varsayılan değeri atanmış olur. Bu şekilde opsiyonel parametre haline getirilmiş olur.
+- Tüm parametreler opsiyonel olabilir.
+- Birden fazla parametre içerisinde bir kısmı opsiyonel olabilirmi?
+- - Birden fazla parametre durumunda opsiyonel olanlar sağ tarafta **Tanımlanmalıdır.
+****
+##### Tanımlandığı sınıf içerisindeki metotlar tarafından kullanımı
+- Bir metot tanımlandığı sınıf içerisindeki farklı bir metot içerisinden çağırılacaksa eğer tek yapılması gereken sadece isminin çağırılmasıdır tetiklenmesidir veya çalıştırılmasıdır.
+***
+##### Başka Sınıfta Tanımlanmış Metotların Erişimi-Referans ve Nesne İlişkisi (Temel Düzey)
+***
+###### Class
+-  Yeryüzündeki herhangi bir olguyu modellememizi sağlayan yapılanma. İçerisinde ilgili olguya dair verileri tutacak alanları(field) barındıran ve bu alanlar üzerinde işlem yapmamızı sağlayacak olan metotları barındıran bir yapı!
+- Class bir modelse, nesne classın verisidir.
+###### Nesne
+- Classtan üretilen değer-veri.
+###### Referans
+- Classtan üretilen değeri kullanmamızı sağlayan yapı.
+***
+![[Pasted image 20250215124921.png]]
+***
+
+- Eğerki bir nesne oluşturduğunda başka yerden o nesneye rahat erişim göstermek istiyorsan;
+```c#
+Random r = new Random();
+```
+
+- Aynı türde bir değişkenle işaretlemen gerekiyor.
+***

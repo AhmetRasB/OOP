@@ -1,12 +1,12 @@
 ﻿class Program
 {
-    static void Main(string[] args)
+    static void x()
     {
-        X(5,10);
+       
     }
+}
 
-    static public void X(int a, int b = 0)
-    {
-        
-    }
+class Ogrenci
+{
+    
 }
