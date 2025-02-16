@@ -8,18 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96cc738a-441c-476c-9cde-341c2a121b0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/CodeChunks.db" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/CodeChunks.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/CodeChunks.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/CodeChunks.db-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/SemanticSymbols.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/SemanticSymbols.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/SemanticSymbols.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/OOP/CopilotIndices/17.12.53.23981/SemanticSymbols.db-wal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OOP/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OOP/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OOP/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OOP/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;.NET Project.OOP.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -87,6 +87,8 @@
       <option name="presentableId" value="Default" />
       <updated>1739564772981</updated>
       <workItem from="1739564774606" duration="1409000" />
+      <workItem from="1739612919836" duration="12670000" />
+      <workItem from="1739709562857" duration="889000" />
     </task>
     <servers />
   </component>

@@ -1,24 +1,13 @@
-﻿class Program
+﻿X();
+void X(int a = 1 )
 {
-    static void main(string[] args)
+    Console.WriteLine("Merhaba");
+    if (a < 7)
     {
-        Random random = new Random();
+        X(++a);
     }
 
-    class Matematik
-    {
-        public int Topla(int sayi1, int sayi2)  
-        {            
-            return sayi1 + sayi2;  
-        }  
-        public int Topla(int sayi1, int sayi2, int sayi3)  
-        {            
-            return sayi1 + sayi2 + sayi3;  
-        }
-        public int Topla(int sayi1, int sayi2, int sayi3,int sayi4)  
-        {            
-            return sayi1 + sayi2 + sayi3 + sayi4;  
-        }  
-      
-    }
+    Console.WriteLine("Dünya");
+    
+    
 }
