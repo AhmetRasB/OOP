@@ -20,16 +20,37 @@
 // {
 //     
 // }
+//
+// int a = 5;
+// Console.WriteLine(a);
+// int b = X(ref a);
+//
+// Console.WriteLine(a);
+// Console.WriteLine(b);
+//
+// ref int X(ref int y)
+// {
+//     y = 25;
+//     return ref y;
+// }
 
-int a = 5;
-Console.WriteLine(a);
-int b = X(ref a);
 
-Console.WriteLine(a);
-Console.WriteLine(b);
+// int a = X();
+//
+// int X(out int b)
+// {
+//     return 0;
+// }
 
-ref int X(ref int y)
+int i;
+
+Addition(out i);
+ 
+
+Console.WriteLine("The addition of the value is: {0}", i);
+
+static void Addition(out int i)
 {
-    y = 25;
-    return ref y;
+    i = 30;
+    i += i;
 }

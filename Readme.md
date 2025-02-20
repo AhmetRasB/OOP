@@ -352,3 +352,95 @@ static void X(int a,int b,string c){
 3. Metotlar arasında farkı yaratırken erişim belirleyicileri ve geri dönüş değerleri aktif rol oynamaktadır.
 4. Parametrelerin sayıları yada türleri farklı olmak zorundadır.
 5. Overloading işlemine tabi tutulmuş metotlardan istediğimizi kullanabilmek için o metodun imzasına uygun parametreleri tetiklememiz yeterli olacaktır.
+##### Recursive fonksiyonlar
+- Kendi içerisinde kendisini çağıran tetikleyen fonksiyonlardır.
+- Bu bir yaklaşımdır!
+- Anlaşılması, kullanması ve anlatılması zordur.
+###### Ne amaçla kullanılmaktadır?
+- Öngörülemeyen, derinliği tahmin edilemeyen sonu bilinmeyen durumlarda tercih edilebilir.
+##### Ref Keywordü Nedir? Ne Amaçla Kullanılmaktadır?
+-  Ref Keywordü referanstan gelmektedir.
+- Referans OOP kavramıdır.
+- OOP de nesneler (object) Ramde heap bölgesinde tutulmaktadır.
+- OOP de referanslar = operatörü ile iletişime geçebilmektedirler. Bir referans işaretlediği herhangi bir nesneyi = operatörü sayesinde farklı bir referansa işaretletebilir.
+- Yani referanslar da = operatörü neticesinde herhangi bir verisel-nesnesel türeme söz konusu olmamakla, işaretlenmiş nesne diğer referans tarafından işaretlenmektedir.
+- Ref keywordü değer türlü değişkenlerde referans operasyonları yapmamıız sağlayan bir keyworddür.
+- Ref Keywordü değer türlü değişkenlerin referanslarını çağırmamızı kullanmamızı sağlayan bir keyworddür.
+- Değer türlü değişkenlerde referans çalışması yapmak istiyorsak eğer ref keywordü kullanılır!
+- Ref keywordü değer türlü değişkenlerin referans türlü değişkenler gibi çalışmasını sağlayan komuttur.
+- Değer türlü değişkenlerde shallow copy yapmamızı sağlayan bir keyworddür.
+
+```c#
+int a = 5;  
+ref int b = ref a;  
+Console.WriteLine(a);  
+Console.WriteLine(b);
+```
+
+Burda assign değil, b ile a aynı değeri görecek şekilde ayarlandı.
+***
+Örnek:
+```c#
+int a = 5;  
+ref int b = ref a;  
+Console.WriteLine(a);  
+Console.WriteLine(b);  
+  
+a *=5;  
+Console.WriteLine(b);  
+b -=10;  
+Console.WriteLine(a);  
+Console.WriteLine(b);
+```
+
+***
+Çıktı:
+5
+5
+25
+15
+15
+***
+
+Örnek 2:
+
+```c#
+int y = 10;  
+X(ref y);  
+Console.WriteLine(y);  
+  
+void X(ref int a)  
+{  
+    a = 25;  
+}
+
+```
+***
+Çıktı:
+25
+***
+```c#
+int y = 10;  
+X( y);  
+Console.WriteLine(y);  
+  
+void X( int a)  
+{  
+    a = 25;  
+}
+```
+***
+Çıktı:
+10
+***
+##### Ref keywordunde return değeri
+- Sadece metotlarda geçerlidir.
+- Metotlar geriye değer döndürebilen yapılardır. Ayrıca metotlarda geriye nesnelerde döndürebilmekteyiz. Ayrıca ref returns özelliği sayesinde değer türlü değişkenlerin referanslarınıda geriye döndürebilmekteyiz.
+##### Out Keywordü Nedir? Ne Amaçla Kullanılmaktadır?
+- Bir sistem düşünelim (şirket, teşkilat, metot). Dış dünyadan herhangi bir veri geliyorsa input diyoruz, dışarı çıkan veriye output diyoruz.
+- Out keywordü metotların Parametreleri üzerinden dışarıya eddğer göndermemizi sağlayan bir keyworddür.
+- Bir metodun parametreleri varsayılan olarak Inputtur, hliyle metotlarda tanımlanmış parametreler direkt olarak içeriye değer almaya odaklanır.
+- Bir metodun parametresi dışarıya değer çıkaracaksa o parametrenin out keywordüyle işaretlenmesi gerekmektedir.
+- Output parametrelerine muhakkak değer verilmelidir.
+- Bir metot out parametreleri barındırıyorsa o pararmetrelere kendi içerisinde değer ataması gerekmektedir. Aksi takdirde derleyici hatası alacaktır! 
+
