@@ -18,8 +18,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 234,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -28,9 +32,9 @@
               "RelativeDocumentMoniker": "Readme.md",
               "ToolTip": "C:\\Projects\\OOP\\Readme.md",
               "RelativeToolTip": "Readme.md",
-              "ViewState": "AgIAAMAAAAAAAAAAAAAqwNoAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAOgAAAAAAAAAAAAAAPcAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-02-12T20:52:14.602Z",
+              "WhenOpened": "2025-03-07T08:53:19.813Z",
               "EditorCaption": ""
             },
             {
@@ -41,7 +45,7 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Projects\\OOP\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAFABAAAAAAAAAAAqwGUBAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-12T19:04:36.376Z",
               "EditorCaption": ""
