@@ -246,3 +246,90 @@ class MyClass
 ##### Deep Copy 
 - Var olan bir nesne deep copy ile kopyalanıyorsa eğer ilgili nesne miktarı çoğalır. Aynı özelliklere ve değerlere sahip olan bellekte frklı bir nesne oluşur
 - Değer türlü değişkenlerde default davranış deep copydir.
+###### MemberwiseClone()
+- MemberwiseClone bir sınıfın içerisinde o sınıftan üretilmiş olan o anki nesneyi clonlamamızı sağlayan bir fonksiyondur.
+#### Encapsulation Nedir? 
+- Encapsulation, nesnelerimizdeki fieldların kontrollü bir şekilde dışarıya açılmasıdır.
+- Bir başka deyişle, nesnelerimizi başkalarının yanlış kullanımlarından korumak için kontrolsüz değişime kapatmaktır.
+
+![[Pasted image 20250307131743.png]]
+- Eski encapsulation kullanma yolu böyleydi.
+
+![[Pasted image 20250307132310.png]]
+- Yeni prop full yapısı böyle
+
+##### Init-Only Properties
+- Herhangi bir nesnenin propertylerine ilk değerlerinin verilmesi ve sonraki süreçte bu değerlerin değiştirilmemesini garanti altına almamızı sağlayan "Init-Only Properties" özelliği gelmiştir.
+- Bu özellik sayesinde nesnenin sadece ilk yaratılış anında propertylerine değer atanmakta ve böylece iş kuralları gereği runtimeda değeri değişmemesi gereken nesneler için ideal bir önlem alınmaktadır.
+- Init-Only properties, developer açısından süreç esnasında değiştirilmemesi gereken property değerlerinin yanlışlıkla değiştirilmesinin önüne geçmekte ve böylece olası hata ve buglardan yazılımı arındırmaktadır.
+
+![[Pasted image 20250307150449.png]]
+
+- Getter-only properties ile çalışmaktansa readonly bir field üzernde işlem yapmamız gerekiyorsa eğer aşağıdaki gibi init bizlere eşlik edebilmektedir. 
+- Böylece nesnelerin ilk yaratılış esnasında salt okunabilir değerlerini vermek için object initializerı bloklamadan kullanabilmekteyiz.
+
+![[Pasted image 20250307153032.png]]
+
+Bu şekilde readonly değerede tek sefer üretme sırasında atanabilir.
+
+##### Records 
+- Init Only properties özelliği, nesne üretim esnasının dışında değişmez değerler oluşturulması için constructor ve auto property initializers yapısının yanında object initializer yapısının kullanılabilir olmasını sağlıyordu.
+
+![[Pasted image 20250307154758.png]]
+
+- Record bir objenin topyekün olarak sabit değişmez olarak kalmasını sağlamakta ve bu durumu güvence altına almaktadır.
+- Obje artık değeeri değişmeyeceğinden dolayı esasında objeden ziyade bir değer gözüyle bakılan bir yapıya dönüşmektedir.
+- Nesne ön plandaysa bu class, nesnenin değerleri ön plandaysa bu recorddur.
+- Recordlar içerisinde data barındıran lightweight classlar olarak değerlendirebiliriz.
+- Recordlar classlara istinaden objeden ziyade içerisinde bulunan dataları sabitleyerek nesneden ziyade datalarını öne çıkarmaktadır.
+- Recordlar bir classtır. Sadece nesnelerinden ziyade değerleri ön plana çıkmış bir class.
+
+![[Pasted image 20250307155608.png]]
+
+##### With Expressions 
+
+Immutable türlerde çalışırkne nesne üzerinde değişiklik yapabilmek için ilgili nesneyi ya çoğaltmamız-klonlamamız(deep copy) ve üzerinde değişiklik yapmamız gerekmekte ya da manuel yeni bir nesne üretip mevcut nesnedeki değerleri değişikliği yansıtılacak şekilde aktarmamız gerekmektedir.
+#### Constructor 
+- Constructor bir nesne üretimi sürecinde ilk tetiklenen metottur.
+
+```c#
+new MyClass();
+```
+
+- Constructor, nesne oluşturma sürecinde tetiklenmek zorundadır
+- Özel bir sınıf elemanıdır, ama metottur. 
+- Metot adı sınıf adıyla aynıysa eğer bu bir constructor metottur! 
+- Geri dönüş değeri olmaz-belirtilmez! 
+- Erişim belirleyicisi public olmalıdır (private ayrı).
+##### Default Constructor
+- İçi boş constructor olabilir, lakin nesne üretirkende constructor tetiklenmektedir!
+##### Parametreli Constructor
+- Normal metotlardaki gibi parametre değeri verilir.
+##### Constructor Overload
+- Bir sınıf içerisinde birden fazla metot varsa aynı isimde overload edilmiş olması lazım, imzaların nitelikleri farklı (isim aynı aldığı parametre tür ve yerleri farklı)
+##### Constructorun erişim belirleyicisini private yaparsak ne olur?
+- Singleton tasarım deseninde kullanılır
+##### This Keywordüyle Constructor'lar Arası Geçiş
+
+![[Pasted image 20250308014019.png]]
+##### Destructor/Finalizer Metot Nedir?
+- Bir classtan üretilmiş olan nesne imha edilirken otomatik çağrılan metottur.
+- C# programlama dilinde destructor sadece class yapılanmasında kullanılabilir ve bir class sade ve sadece tek bir tane Destructor içermelidir. (Overload işlemleri yapılmadığı için ve parametre alamadığı için)
+##### Bir nesne Hangi Şartlarda Kim Tarafından İmha Edilir?
+- Bir nesnenin imha edilmesi için;
+	- İlgili nesne herhangi bir referans tarafından işaretlenmemelidir,
+	- Yahut nesnenin oluşturulduğu ve kullanıldığı scope sona ermiş olmalıdır.
+	- Yani anlaşılan ilgili nesneye bir daha erişilemez hale gelinmelidir.
+- işte o zaman nesne imha edilir.
+
+##### Garbage Collector
+- Uygulamada lüzumsuz olan nesneleri toplamak için gC isimli bir mekanizma devreye girer.
+- Esasında GC C# da bellek optimizasyonunu üstlenen bir yapılanmadır.
+- C# da GC ın ne zaan iş göreceği tahmin edilemez. Kafasına göre takılır.
+- Dolayısıyla biz geliştiricilerin bu mekanizmaya müdahele etmesi pek önerilmez.
+
+
+
+
+
+

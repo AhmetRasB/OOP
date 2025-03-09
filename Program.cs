@@ -371,13 +371,15 @@ class MyClass
    
 //}
 
-record MyRecord
-{
-    public MyRecord()
-    {
+//record MyRecord
+//{
+//    public MyRecord()
+//    {
         
-    }
-    public MyRecord(int a) : this()
-    {
-    }
-}
+//    }
+//    public MyRecord(int a) : this()
+//    {
+//    }
+//}
+
+
