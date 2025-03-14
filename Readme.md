@@ -328,8 +328,125 @@ new MyClass();
 - C# da GC ın ne zaan iş göreceği tahmin edilemez. Kafasına göre takılır.
 - Dolayısıyla biz geliştiricilerin bu mekanizmaya müdahele etmesi pek önerilmez.
 
+![[Pasted image 20250309134640.png]]
 
+##### Deconstruct Metodu Nedir?
+- Bir sınıf içerisinde deconstruct ismiyle tanımlanan metot, compiler tarafından özel olarak algılanmakta ve sınıfın nesnesi üzerinden geriye hızlıca Tuple bir değer döndürmemizi sağlamaktadır.
+##### Static Constructor
+- Bir sınıftan nesne üretilirken ilk tetiklenen artık static constructor
+- Static constructor sadece ilk nesne üretilirken tetiklenir.
+- Static consturctorda dönüş değeri ve erişim belirleyicisi bildirilmez!
+- Overloading yapılmaz bir sınıfın içerisinde sadece bir tane tanımlanabilir!
+##### Positional Record 
+- Norminal Recordlar Object Inıtializerlar ile ilk değerleri verilerek üretilebilen readonly datalardır.
+- Positional Recordlar ise esasında recordlar içerisinde tanımlama yapabildiğimiz constructor ve deconstruuctor kullanımlarını dahada özelleştirerek kullanılmasını sağlamaktadır.
 
+![[Pasted image 20250309204553.png]]
+- bir record üzerinde constructor ve deconstruct yapılanasını hızlı bir şekilde oluşturmamızı sağlayan bir şemantik sağlamaktadır.
+- P. R. kullanırken parametrelerin karşılıkları olan propertylerini manuel oluşturmak zorunda değiliz
 
+##### Inheritence (Kalıtım)
+- Kalıtım OOP'nin en önemli özelliğidir.
+- Üretilen nesneler farklı nesnelere özelliklerini aktarabilmekte ve böylece hiyeraşik bir düzenleme yapılabilmektedir.
+- Nesne tabanlı programlamada benzer aynı olgudaki nesnelerin aynı olan memberları özellikleri içerikleri eğerki bu şekilde her sınıf içinde tekrar tekrar tanımlanmışsa bu aykırı bir durumdur
+- Aynı olguda olan sınıfların tekrar eden memberlarını bir başka sınıfta toplansın ve oradan ilgili sınırlara kalıtımsalolarak aktarılsın
+- Örnek Erkek ve Kadın sınıfları insan sınıfından kalıtım alırsa türetilirse miras alısa insan sınıfındaki tüm memberlar miras olarak aktarılacaktır (aktarılmasına izin verilen memberlar)
+- Genellenemeyen diğerlerinde olmayan ve sadece o sınıfa ait olan özellikler direkt ilgili sınıfa tanımlanmalıdır
 
+![[Pasted image 20250309224953.png]]
+- Kalıtım lalettayin bir şekilde tasarlanmamalıdır. Ortak olguda olan nesneleri temsil edecek olan bir üst ve daha evrensel nitelikte olgu olmalıdır. Opel,Mercedes ve Fiat ortak olgudur. Yani üçüde bir arabadır. Haliyle bunların daha evrensel üstniteliği Araba olarak nitelendirilebilir.
+- Kalıtım operasyonunda kalıtım veren sınıf erişilebilen tüm memberları kalıtım alan sınıfa kalıtsal olarak aktarılacaktır. 
+##### Programcı açısından kalıtım nedir? 
+- OOP de kalıtım özünde nesnelerin birbirlerinden türemesini sağlayan bir özelliktir
+- Bu özellik yanında da birçok özellik ve stratejik yapılanma getirmektedir.
+##### C# Programlama Dilinde Hangi yapılar Kalıtım Alabilirler? 
+- C# programlama dilinde kalıtım sınıflara özel bir niteliktir.
+- Yani bir sınıf sade ve sadece bir sınıftan kalıtım alabilir.
+- Recordlarda kalıtım alabilmekte ama sadece kendi aralarında. Kalıtım alabildikleri tek istisnai sınıf ise object sınıfıdır.
+- Ayrıca abstract class,interface ve struct gibi yapılarında kendilerine göre kalıtımsal operasyonları mevcuttur. Bu yapılardaki kalıtımsal detaylar ilgili derslerde ele alınacaktır.
+##### : Operatörü
+- C# ta iki sınıf arasında kalıtımsal ilişki kurabilmek için : operatörü kullanılmaktadır.
+- Hatta bilsekte bilmesekte kalıtımsal tüm ilişkiler : operatörü tarafından yapılmaktadır.
 
+```c#
+class Car
+{
+
+}
+
+class Mercedes : Car
+{
+
+}
+
+class Opel : Car
+{
+
+}
+class Fiat : Car
+{
+}
+```
+
+- Soldaki sağdakinden kalıtım alır.
+##### Base Class ve Derived Class Nedir? 
+- Kalıtım veren class Base Class- Parent Class
+- Kalıtım alan class Derived class - Child Class
+- Bir sınıfın sadece 1 base classı olabilir.
+- Atalarındaki tüm sınıflar base class değildir
+- Örneğin C nin baseclassı b dir a ise atasıdır lakin base classı değildir.
+##### Kalıtımın Altın Kuralı
+- Bir class sadece bir base clasa sahip olur demiştik
+- Bunun nedeni c# programlama dilinde bir classın sade ve sadece tek bir classtan türetilmesine izin verilmektedir. Aynı anda birden fazla classtan türeme işlemi gerçekleştirilemez!
+##### Kalıtımda Nesne Üretim Sırası
+- Bir sınıftan nesne üretimi yapılırken kalıtım aldığı üst sınıflar varsa eğer önce o sınıflardan sırayla nesne üretilir.
+- Yani buradan anlaşılıyorki bir sınıftan nesne üretilirken bsiz 1 adet nesne ürettiğinizi düşünenizde kalıtımsal açıdan birden fazla nesne üretimi gerçekleştirilebilmektedir.
+##### Bir Sınıftan Base Class Constructoruna Ulaşım
+- Mademki herhangi bir sınıftan nesne üretimi gerçekleştirilirken önce base classından nesne üretiliyor bu demektirki önce base classın constructoru tetikleniyor.
+- Haliyle bizler nesne üretimi esnasında base classta üretilecek olan nesnenin istediğimiz constructorlarını tetikleyebilmeli yahut varsa parametre bu değerleri verebilmeliyiz.
+- İşte bunun için base keywordünü kullanmaktayız.
+- Eğerki base classın costructoru sadece parametre alan constructor ise derived classlarda o consturtora bir değer göndermek zorundayız
+- Bunuda base keywordüyle sağlayabiliriz
+
+![[Pasted image 20250310012812.png]]
+- Eğerki base keywordü boş parametreli bir constructor varsa derived classta base ile bir bildirimde bulunmak zorunda değiliz. Neden? Çünkü varsayılan olarak kalıtımsal durumda boş parametreli constructor tetiklenir.
+- Bir classın constructorunun yanında : base keywordünü kullanırsak eğer o classın base clasının tum constructorlarını bize getirecektir. Haliyle ilgili sınıftan bir nesne üretilirken base classtan nesne üretimi esnasında hangi consturcotın tetikleneceğini bu şekilde belirleyebiliriz.
+
+##### base Keyword vs this Keyword
+- this, bir sınıftaki consturtorlar arasında geçiş yapmamızı sağlar.
+- base, bir sınıfın base classının constructorlarından hangisinin tetikleneceğini belirlememizi ve varsa parametrelerinin değerlerinin derived classtan verilmesini sağlar.
+- Ayrıca nasıl ki this, ilgili sınıfta o anki nesnenin memberlarına erişebilmemizi sağlıyor, aynı şekilde base de base clasdaki memberlara erişebilmemizi sağlamaktadır.
+
+![[Pasted image 20250310013517.png]]
+
+##### Nesnelerin Atası Object türü
+- C# programlama dilinde tüm sınıflar Object sınıfından türetilir.
+
+![[Pasted image 20250310020319.png]]
+
+##### Name Hiding sorunsalı
+- Kalıtım durumlarında atalardaki herhangi bir member ile aynı isimde membera sahip olan nesneler olabilmektedir.
+- Eskiden newlemek gerekiyordu artık direkt yazabiliriz
+
+![[Pasted image 20250310021931.png]]
+
+##### Recordlarda kalıtım?
+- Recordlar sadece recordlardan kalıtım alabilirler.
+- classlardan alamaz veremez
+- kalıtımın tüm temel kuralları recordlar içinde geçerlidir
+- aynı şekilde objectten üretilirler
+- name hiding söz konusu olur
+
+#### Sanal Yapılar | Virtual-override
+- Bir nesne üzerinde var olan tüm memberların tamamı derleme zamanında belirgindir.
+- Yani, derleme aşamasında hangi nesne üzerinde hangi metotların çağrılabileceği bilinmektedir.
+
+![[Pasted image 20250312125542.png]]
+
+- Sanal yapılar ile derleme zamanında kesin bilinen bu bilgi run time(çalışma zamanın) da belirlenebilmektedir. Yani ilgili nesnenin hangi metodu kullanacağı bilgisayar verisi kararlaştırılır.
+
+#### Sanal Yapılar Nedir? 
+
+- Sanal yapılar, bir sınıf içerisinde bildirilmiş olan ve o sınıftan türeyen alt sınıflarda da tekrar bildirilebilen yapılardır.
+- Bu yapılar metot ya da property olabilir.
+- 

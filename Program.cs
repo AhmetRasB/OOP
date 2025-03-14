@@ -368,14 +368,14 @@ class MyClass
 //    {
 
 //    }
-   
+
 //}
 
 //record MyRecord
 //{
 //    public MyRecord()
 //    {
-        
+
 //    }
 //    public MyRecord(int a) : this()
 //    {
@@ -383,3 +383,252 @@ class MyClass
 //}
 
 
+
+
+//X();
+//GC.Collect();
+//Console.ReadLine();
+
+//int sayi = 100;
+//while (sayi>=1)
+//{
+//    new MyClass2(sayi--);
+//}
+//GC.Collect();
+//Console.ReadLine();
+
+//static void X()
+//{
+//    MyClass myClass = new MyClass();
+
+
+//}
+//class MyClass
+//{
+//    public MyClass()
+//    {
+//        Console.WriteLine("Nesne Uretildi");
+//    }
+//    ~MyClass()
+//    {
+//        Console.WriteLine("Imha ediliyor...");
+//    }
+//}
+
+//class MyClass2
+//{
+//    private int no;
+
+//    public MyClass2(int no)
+//    {
+//        this.no = no;
+//        Console.WriteLine($"{no}. nesne olusturuldu");
+//    }
+//    ~MyClass2()
+//    {
+//        Console.WriteLine($"{no}. nesne imha ediliyor...");
+//    }
+//}
+//Person person = new Person()
+//{
+//    Name = "Ahmet",
+//    Age = 25
+//};
+//Person person2 = new Person
+//{
+//    Name = "David",
+//    Age = 24,
+//    citycode = 5
+//};
+//var (x,y) = person;
+//var (x2,y2,z2) = person2;
+//Console.WriteLine(person.Age);
+//Console.WriteLine(person.Name);
+//Console.WriteLine(x);
+//Console.WriteLine(y);
+//Console.WriteLine(x2);
+//Console.WriteLine(y2);
+//Console.WriteLine(z2);
+//class Person
+//{
+//    public string Name { get; set; }
+//    public int Age { get; set; }
+//    public int citycode { get; set; }
+
+//    public void Deconstruct(out string name, out int age)
+//    {
+//        name = this.Name;
+//        age = this.Age;
+//    }
+//    public void Deconstruct(out string name, out int age,out int citycode)
+//    {
+//        name = this.Name;
+//        age = this.Age;
+//        citycode = this.citycode;
+//    }
+
+//    public Person()
+//    {
+//        Console.WriteLine("Bu bir constructor");
+//    }
+//    static Person()
+//    {
+//        Console.WriteLine("Bu bir static constructor");
+//    }
+//}
+
+//class MyClass
+//{
+//    public MyClass()
+//    {
+
+//    }
+//    static MyClass()
+//    {
+
+//    }
+//}
+//var database = Database.GetInstance;
+//class Database
+//{
+//    Database()
+//    {
+
+//    }
+
+//    private static Database database;
+//    static public Database GetInstance
+//    {
+//        get
+//        {
+//            return database;
+//        }
+//    }
+
+//    static Database()
+//    {
+//        database = new Database();
+//    }
+//}
+//MyRecord myRecord = new MyRecord("Ahmet", "Beyhan");
+//var(name, surname) = myRecord;
+
+
+
+
+//record MyRecord(string name, string surname)
+//{
+//    public MyRecord(string name): this()
+//    {
+
+//    }
+
+//    public MyRecord(): this("Ahmet", "Beyhan")
+//    {
+//    }
+
+    
+//}
+
+//using System.Threading.Channels;
+
+//new Fiat();
+
+//class Car
+//{
+//    public string Brand { get; set; }
+//    public string Model { get; set; }
+//    public int KM { get; set; }
+//}
+
+//class Mercedes : Car
+//{
+//    public Mercedes()
+//    {
+//    Console.WriteLine($"{nameof(Mercedes)} olusturuldu ");
+//    }
+//}
+
+//class Opel : Mercedes
+//{
+//    public Opel()
+//    {
+//        Console.WriteLine($"{nameof(Opel)} olusturuldu");
+//    }
+//}
+//class Fiat : Opel
+//{
+//    public Fiat()
+//    {
+//        Console.WriteLine($"{nameof(Fiat)} olusturuldu");
+//    }
+//}
+
+//class MyClass
+//{
+//    public MyClass(int a)
+//    {
+        
+//    }
+
+//    public MyClass()
+//    {
+        
+//    }
+//}
+//class MyClass2 : MyClass
+//{
+//    public MyClass2():base(5)
+//    {
+        
+//    }
+
+//    public MyClass2(int a) : base(5)
+//    {
+        
+//    }
+//}
+
+//class A
+//{
+//    private int a;
+//    public int b;
+//    public int MyProperty { get; set; }
+    
+//}
+
+//class B : A
+//{
+//    private int c;
+
+//    public void X()
+//    {
+//        MyProperty = 5;
+//    }
+
+//}
+
+class A
+{
+    public void X()
+    {
+
+    }
+}
+
+class B : A
+{
+}
+
+class C : B
+{
+
+}
+
+class D : C
+{
+    public void X()
+    {
+        
+    }
+}

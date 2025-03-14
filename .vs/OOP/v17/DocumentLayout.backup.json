@@ -25,17 +25,8 @@
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Readme.md",
-              "DocumentMoniker": "C:\\Projects\\OOP\\Readme.md",
-              "RelativeDocumentMoniker": "Readme.md",
-              "ToolTip": "C:\\Projects\\OOP\\Readme.md",
-              "RelativeToolTip": "Readme.md",
-              "ViewState": "AgIAAOgAAAAAAAAAAAAAAPcAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-03-07T08:53:19.813Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -45,10 +36,22 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Projects\\OOP\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAFABAAAAAAAAAAAqwGUBAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAF0CAAAAAAAAAAAAwG0CAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T19:04:36.376Z",
+              "WhenOpened": "2025-03-09T10:32:46.561Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Readme.md",
+              "DocumentMoniker": "C:\\Projects\\OOP\\Readme.md",
+              "RelativeDocumentMoniker": "Readme.md",
+              "ToolTip": "C:\\Projects\\OOP\\Readme.md",
+              "RelativeToolTip": "Readme.md",
+              "ViewState": "AgIAAIoBAAAAAAAAAAAiwKUBAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-03-09T10:32:37.987Z"
             }
           ]
         }
