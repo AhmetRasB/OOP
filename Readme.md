@@ -449,4 +449,34 @@ class Fiat : Car
 
 - Sanal yapılar, bir sınıf içerisinde bildirilmiş olan ve o sınıftan türeyen alt sınıflarda da tekrar bildirilebilen yapılardır.
 - Bu yapılar metot ya da property olabilir.
-- 
+- Name hiding ile bir sınıftaki herhangi bir memberı ondan türeyen torunlarda oluşturabiliyoruz ve buraki yaşanan çakışmayada Name Hiding diyoruz
+- Lakin, sanal yapılarda olay bu şekilde değildir. Bir sınıfta bildirilen sanal yapı bu sınıftan türeyen torunlarda eilebilmekte yani devre dışı bırakılıp yeniden oluşturulabilmektedir.
+- Bir sınıfta tasarlanmış sanal yapının işlevinin iptal edilip edilmeme durumuna göre tanımlandığı sınıftan mı yoksa bu sınıfın torunlarından mı çağırılacağının belirlenmesi run time'da gerçekleşecektir.
+
+##### Ne İçin Kullanılır? 
+
+- Bir sınıfta tanımlanmış olan herhangi bir memberın kendisinden türeen alt sınıflarda Name Hiding durumuna düşmemeksizin ezilip-yeniden yazılıp yapılandırılması için kullanılır.
+- Yani bir member sanal yapıldı diye illa ki kendisinden türeyen alt sınıflarda ezilmek zorunda değildir! Ama ezilmek istenirse de Name Hiding e bulaşmadan direkt ilgili sınıfın bir memberı olacak şekilde çalışmasını sağlamış olur.
+- Bir sınıfta sanal yapı oluşturabilmek için ilgili member'ın imzasını virtual keywordü ile işaretlemek yeterlidir.
+
+- **public virtual** veya **virtual public** olabilir
+
+![[Pasted image 20250319140801.png]]
+
+##### Sanal Yapılar Nasıl Ezilir? 
+
+- Bir classta virtual ile işaretlenerek sanal hale getirilmiş bir member metot ya da property bu classtan miras alan torunlarında ezilmek-yeniden yazılmak isteniyorsa eğer ilgili classta imzası override keywordü işaretlenmiş bir vaziyette tekrardan aynı member oluşturulur.
+
+![[Pasted image 20250319141017.png]]
+
+- Base class'ta ya da atalarda virtual ile işaretlenerek sanallaştırılmış herhangi bir member torunlarda illa ki override ile ezilmek zorunda değildir.
+- Ama bir torun class base classtaki herhangi bir memberı override edecekse eğer o memberın kesinlikle virtual ile işeretlenmiş olması gerekmektedir.
+- Virtual ile işaretlenmemiş bir metot kesinlikle override edilemez!
+- Virtual bir memberın override ile ezilmesine direkt olarak override etmek diyeceğiz.
+- override keywordünü ileride Abstract Classların implementasyonunda da kullanacağız.
+#### İkiden Çok Hiyeraşik Kalıtım Durumlarında Override Durumu
+
+- Bir class'ta virtual ile işaretlenmiş herhangi bir member illa ki direkt o classtan türeyen 1. Dereceden classlar da override edilmek mecburiyetinde değildir! 
+- İhtiyaca binaen alt seviyedeki torunlardan herhangi birinde override edilebilir.
+- Lakin böyle bir durumda kritik bir durum vardır! O da ilgili soyut memberın en son override edildiği Objectten sonra geçerli olduğudur.
+- Ve o object'ten sonra hiyeraşik olarak türetilen ınıflar varsa onlarda override işlemi gerçekleştirebilir.

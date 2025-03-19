@@ -527,7 +527,7 @@ class MyClass
 //    {
 //    }
 
-    
+
 //}
 
 //using System.Threading.Channels;
@@ -568,24 +568,24 @@ class MyClass
 //{
 //    public MyClass(int a)
 //    {
-        
+
 //    }
 
 //    public MyClass()
 //    {
-        
+
 //    }
 //}
 //class MyClass2 : MyClass
 //{
 //    public MyClass2():base(5)
 //    {
-        
+
 //    }
 
 //    public MyClass2(int a) : base(5)
 //    {
-        
+
 //    }
 //}
 
@@ -594,7 +594,7 @@ class MyClass
 //    private int a;
 //    public int b;
 //    public int MyProperty { get; set; }
-    
+
 //}
 
 //class B : A
@@ -608,27 +608,97 @@ class MyClass
 
 //}
 
-class A
-{
-    public void X()
-    {
+//class A
+//{
+//    public void X()
+//    {
 
-    }
-}
+//    }
+//}
 
-class B : A
-{
-}
+//class B : A
+//{
+//}
 
-class C : B
-{
+//class C : B
+//{
 
-}
+//}
 
-class D : C
-{
-    public void X()
-    {
-        
-    }
-}
+//class D : C
+//{
+//    public void X()
+//    {
+
+//    }
+//}
+
+
+// Virtual and Override
+
+
+//Terlik terlik = new Terlik();
+//terlik.Information();
+//Kalem kalem = new Kalem();
+//kalem.Information();
+//Object obj = new Object();
+//obj.Information();
+
+//class Object
+//{
+//    virtual public void Information()
+//    {
+//        Console.WriteLine("Ben bir objeyim");
+//    }
+//}
+
+//class Terlik : Object
+//{
+    
+//}
+
+//class Kalem : Terlik
+//{
+//    override public void Information()
+//    {
+//        Console.WriteLine("Ben bir kalem objesiyim");
+//    }
+//}
+
+// Ornek 2 s
+
+//Memeli meme = new Memeli();
+//meme.Konus();
+//Maymun maymun = new Maymun();
+//maymun.Konus();
+//Inek inek = new Inek();
+//inek.Konus();
+
+
+
+//class Memeli
+//{
+//    virtual public void Konus()
+//    {
+//        Console.WriteLine("Ben Konusmuyorum");
+//    }
+//}
+
+//class Maymun : Memeli
+//{
+//    public override void Konus()
+//    {
+//        Console.WriteLine("Ben Maymunum");
+//    }
+//}
+//class Inek : Memeli
+//{
+//    public override void Konus()
+//    {
+//        Console.WriteLine("Ben Inegim");
+//    }
+//}
+
+
+// Ornek 3 
+
